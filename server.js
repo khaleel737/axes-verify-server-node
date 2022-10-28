@@ -1,6 +1,6 @@
 const http = require('http');
 const express = require('express');
-const client = require("twilio")(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
+const client = require("twilio")("AC1039408e2eeaabefc2c9c619d26b1660", "d07382ba55821392b9409bd5bca9a4ed");
 
 const app = express();
 
@@ -9,7 +9,7 @@ app.post('/start', (req, res) => {
   phoneNumber = req.query.phone_number
   via = req.query.via
 
-  client.verify.services(process.env.VERIFY_SERVICE_SID)
+  client.verify.services("VA5062eddedeba1b8636f1a5cc7f03dd0b")
     .verifications
     .create({to: `+${countryCode}${phoneNumber}`, channel: via})
     .then(resp => res.json(resp));
