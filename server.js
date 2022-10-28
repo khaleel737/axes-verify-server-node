@@ -5,10 +5,6 @@ const client = require("twilio")(process.env.NODE_PUBLIC_TWILIO_ACCOUNT_SID, pro
 const app = express();
 
 
-// NODE_PUBLIC_TWILIO_ACCOUNT_SID=AC1039408e2eeaabefc2c9c619d26b1660
-// NODE_PUBLIC_TWILIO_AUTH_TOKEN=19f7d4f8db8c5c47105b29f30018257f
-// NODE_PUBLIC_VERIFY_SERVICE_SID=VA851554d4f70493184698fd5f4fe8902c
-
 
 app.post('/start', (req, res) => {
   countryCode = req.query.country_code
